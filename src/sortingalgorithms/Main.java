@@ -15,5 +15,8 @@ public class Main {
 //        InsertionSort sorter = new InsertionSort();
         MergeSort sorter = new MergeSort();
         printVector(sorter.sort(vector));
+        
+        TimeMeasures timer = new TimeMeasures();
+        timer.measureInsortTime();
     }
 }
