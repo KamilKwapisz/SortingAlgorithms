@@ -2,19 +2,20 @@ package sortingalgorithms;
 
 public class InsertionSort implements SortingAlgorithm {
 
-    public double[] sort(double[] vector) {
-        if (vector == null) {
+    public double[] sort(double[] unsortedVector) {
+        if (unsortedVector == null) {
             throw new NullPointerException();
         }
-        for (int i = 1; i < vector.length; i++) {
-            double elementToInsert = vector[i];
+        for (int i = 1; i < unsortedVector.length; i++) {
+            double elementToInsert = unsortedVector[i];
             int j = i - 1;
-            while (j >= 0 && vector[j] > elementToInsert) {
-                vector[j + 1] = vector[j];
+            while (j >= 0 && unsortedVector[j] > elementToInsert) {
+                unsortedVector[j + 1] = unsortedVector[j];
                 j--;
             }
-            vector[j + 1] = elementToInsert;
+            unsortedVector[j + 1] = elementToInsert;
         }
-        return vector;
+        double[] sortedVector = unsortedVector;
+        return sortedVector;
     }
 }

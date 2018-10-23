@@ -1,6 +1,6 @@
 package sortingalgorithms;
 
-public class MergeSort {
+public class MergeSort implements SortingAlgorithm {
 
     void merge(double vector[], int leftIndex, int middleIndex, int RightIndex) {
         int firstVectorSize = middleIndex - leftIndex + 1;
@@ -47,11 +47,12 @@ public class MergeSort {
         }
     }
 
-    public double[] sort(double vector[]) {
-        if (vector == null) {
+    public double[] sort(double unsortedVector[]) {
+        if (unsortedVector == null) {
             throw new NullPointerException();
         }
-        sortVector(vector, 0, vector.length - 1);
-        return vector;
+        sortVector(unsortedVector, 0, unsortedVector.length - 1);
+        double[] sortedVector = unsortedVector;
+        return sortedVector;
     }
 }
