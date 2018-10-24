@@ -16,7 +16,10 @@ public class Main {
 //        MergeSort sorter = new MergeSort();
         printVector(sorter.sort(vector));
         
-        TimeMeasures timer = new TimeMeasures();
+        TimeMeasures timer = new TimeMeasures(100, 1000000);
+        System.out.println("Insertion Sort: ");
         timer.measureInsortTime();
+        System.out.println("Merge Sort: ");
+        timer.measureMergeSortTime();
     }
 }
