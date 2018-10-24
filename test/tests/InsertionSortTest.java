@@ -70,7 +70,7 @@ public class InsertionSortTest {
     }
     
     @Test(expected = NullPointerException.class)
-    public void testIfMethodRaisesAnException(){
+    public void testIfMethodRaisesAnNullPointerException(){
         // Given
         double[] unsortedVector = null;
         InsertionSort insort = new InsertionSort();

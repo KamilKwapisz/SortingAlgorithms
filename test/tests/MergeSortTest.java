@@ -70,7 +70,7 @@ public class MergeSortTest {
     }
     
     @Test(expected = NullPointerException.class)
-    public void testIfMethodRaisesAnException(){
+    public void testIfMethodRaisesAnNullPointerException(){
         // Given
         double[] unsortedVector = null;
         MergeSort insort = new MergeSort();
