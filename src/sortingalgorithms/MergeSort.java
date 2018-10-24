@@ -2,40 +2,27 @@ package sortingalgorithms;
 
 public class MergeSort implements SortingAlgorithm {
 
-    void merge(double vector[], int leftIndex, int middleIndex, int RightIndex) {
-        int firstVectorSize = middleIndex - leftIndex + 1;
-        int secondVectorSize = RightIndex - middleIndex;
-        double leftVector[] = new double[firstVectorSize];
-        double rightVector[] = new double[secondVectorSize];
+    void merge(double vector[], int leftIndex, int middleIndex, int rightIndex) {
+        double[] mergedVector = new double[rightIndex - leftIndex + 1];
+        int i = leftIndex;
+        int j = middleIndex;
+        int l = 0;
 
-        for (int i = 0; i < firstVectorSize; i++) {
-            leftVector[i] = vector[leftIndex + i];
-        }
-        for (int j = 0; j < secondVectorSize; j++) {
-            rightVector[j] = vector[middleIndex + 1 + j];
-        }
-
-        int firstVectorIndex = 0, secondVectorIndex = 0, mergedVectorIndex = leftIndex;
-        while (firstVectorIndex < firstVectorSize && secondVectorIndex < secondVectorSize) {
-            if (leftVector[firstVectorIndex] <= rightVector[secondVectorIndex]) {
-                vector[mergedVectorIndex] = leftVector[firstVectorIndex];
-                firstVectorIndex++;
+        while (i < middleIndex && j <= rightIndex) {
+            if (vector[i] <= vector[j]) {
+                mergedVector[l++] = vector[i++];
             } else {
-                vector[mergedVectorIndex] = rightVector[secondVectorIndex];
-                secondVectorIndex++;
+                mergedVector[l++] = vector[j++];
             }
-            mergedVectorIndex++;
         }
-        while (firstVectorIndex < firstVectorSize) {
-            vector[mergedVectorIndex] = leftVector[firstVectorIndex];
-            firstVectorIndex++;
-            mergedVectorIndex++;
+        while (i < middleIndex) {
+            mergedVector[l++] = vector[i++];
         }
-        while (secondVectorIndex < secondVectorSize) {
-            vector[mergedVectorIndex] = rightVector[secondVectorIndex];
-            secondVectorIndex++;
-            mergedVectorIndex++;
+        while (j < rightIndex) {
+            mergedVector[l++] = vector[j++];
         }
+        vector = mergedVector;
+
     }
 
     private void sortVector(double vector[], int leftIndex, int rightIndex) {
