@@ -6,7 +6,7 @@ public class Main {
         System.out.print("[");
         for (double element : vector){
             System.out.print(element + ", ");
-        }
+        } 
         System.out.println("]");
     }
     
@@ -17,10 +17,10 @@ public class Main {
         QuickSort sorter = new QuickSort();
         printVector(sorter.sort(vector));
         
-//        TimeMeasures timer = new TimeMeasures(100, 1000000);
+        TimeMeasures timer = new TimeMeasures(180, 1000);
 //        System.out.println("Insertion Sort: ");
 //        timer.measureInsortTime();
 //        System.out.println("Merge Sort: ");
-//        timer.measureMergeSortTime();
+        timer.measureQuickSortTime();
     }
 }
