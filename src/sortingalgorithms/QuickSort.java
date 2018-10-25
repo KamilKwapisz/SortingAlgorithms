@@ -18,8 +18,8 @@ public class QuickSort {
             while (i < j && vector[i] <= x) {
                 i++;
             }
-            while (i < j && vector[i] > x) {
-                j++;
+            while (i < j && vector[j] > x) {
+                j--;
             }
             if (i < j) {
                 swap(vector, i, j);
