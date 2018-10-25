@@ -3,15 +3,15 @@ package tests;
 import java.util.Random;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import sortingalgorithms.MergeSort;
+import sortingalgorithms.QuickSort;
 
-public class MergeSortTest {
+public class QuickSortTest {
 
     @Test
     public void testWithOddNumberOfDoubles() {
         // Given
         double[] unsortedVector = {32.2, 42.1, 7.2, 0.3, 15.7};
-        MergeSort sorter = new MergeSort();
+        QuickSort sorter = new QuickSort();
 
         // When
         double[] sortedVector = sorter.sort(unsortedVector);
@@ -26,7 +26,7 @@ public class MergeSortTest {
     public void testWithEvenNumberOfDoubles() {
         // Given
         double[] unsortedVector = {32.2, 42.1, 7.2, 0.3, 15.7, 70.2};
-        MergeSort sorter = new MergeSort();
+        QuickSort sorter = new QuickSort();
 
         // When
         double[] sortedVector = sorter.sort(unsortedVector);
@@ -40,7 +40,7 @@ public class MergeSortTest {
     public void testWithNegativeNumbers() {
         // Given
         double[] unsortedVector = {-32, -2, 3, 0, -17, 29};
-        MergeSort sorter = new MergeSort();
+        QuickSort sorter = new QuickSort();
 
         // When
         double[] sortedVector = sorter.sort(unsortedVector);
@@ -59,7 +59,7 @@ public class MergeSortTest {
         for (int i = 0; i < unsortedVectorLength; i++) {
             unsortedVector[i] = generator.nextDouble();
         }
-        MergeSort sorter = new MergeSort();
+        QuickSort sorter = new QuickSort();
 
         // When
         double[] sortedVector = sorter.sort(unsortedVector);
@@ -73,7 +73,7 @@ public class MergeSortTest {
     public void testIfMethodRaisesAnNullPointerException(){
         // Given
         double[] unsortedVector = null;
-        MergeSort sorter = new MergeSort();
+        QuickSort sorter = new QuickSort();
         
         // When
         double [] sortedVector = sorter.sort(unsortedVector);
@@ -86,7 +86,7 @@ public class MergeSortTest {
     public void testOnEmptyVector(){
         int vectorLength = 10;
         double[] unsortedVector = new double[vectorLength];
-        MergeSort sorter = new MergeSort();
+        QuickSort sorter = new QuickSort();
         
         // When
         double [] sortedVector = sorter.sort(unsortedVector);

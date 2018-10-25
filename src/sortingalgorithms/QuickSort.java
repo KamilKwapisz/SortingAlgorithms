@@ -32,7 +32,7 @@ public class QuickSort {
         return i;
     }
 
-    private void qsort(double[] vector) {
+    private void quickSort(double[] vector) {
         int vectorLength = vector.length;
         Stack<Integer> stack = new Stack<>();
         stack.push(0);
@@ -56,7 +56,7 @@ public class QuickSort {
         if (vector == null){
             throw new NullPointerException();
         }
-        qsort(vector);
+        quickSort(vector);
         return vector;
     }
     
