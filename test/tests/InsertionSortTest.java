@@ -68,33 +68,55 @@ public class InsertionSortTest {
         // Then
         assertEquals(sortedVectorLength, unsortedVectorLength);
     }
-    
+
     @Test(expected = NullPointerException.class)
-    public void testIfMethodRaisesAnNullPointerException(){
+    public void testIfMethodRaisesAnNullPointerException() {
         // Given
         double[] unsortedVector = null;
         InsertionSort insort = new InsertionSort();
-        
+
         // When
-        double [] sortedVector = insort.sort(unsortedVector);
-        
+        double[] sortedVector = insort.sort(unsortedVector);
+
         // Then
         assertNull(sortedVector);
     }
-    
+
     @Test
-    public void testOnEmptyVector(){
+    public void testOnEmptyVector() {
+        // Given
         int vectorLength = 10;
         double[] unsortedVector = new double[vectorLength];
         InsertionSort insort = new InsertionSort();
-        
+
         // When
-        double [] sortedVector = insort.sort(unsortedVector);
-        double [] expectedVector = new double[vectorLength];
+        double[] sortedVector = insort.sort(unsortedVector);
+        double[] expectedVector = new double[vectorLength];
         int expectedLength = vectorLength;
-        
+
         // Then
         assertEquals(sortedVector.length, expectedLength);
+        assertArrayEquals(sortedVector, expectedVector, 0.0);
+    }
+
+    @Test
+    public void testOnMaxHugeIntegerValueVectorSize() {
+        // Given
+        int vectorLength = 100000;
+        double[] unsortedVector = new double[vectorLength];
+        InsertionSort sorter = new InsertionSort();
+        for (int i = 0; i < vectorLength; i++) {
+            unsortedVector[i] = vectorLength - i - 1;
+        }
+
+        // When
+        double[] sortedVector = sorter.sort(unsortedVector);
+        double[] expectedVector = new double[vectorLength];
+        for (int i = 0; i < vectorLength; i++) {
+            expectedVector[i] = i;
+        }
+
+        // Then
         assertArrayEquals(sortedVector, expectedVector, 0.0);
     }
 

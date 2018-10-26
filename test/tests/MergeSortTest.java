@@ -3,7 +3,7 @@ package tests;
 import java.util.Random;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import sortingalgorithms.MergeSortRecurrent;
+import sortingalgorithms.MergeSort;
 
 public class MergeSortTest {
 
@@ -11,7 +11,7 @@ public class MergeSortTest {
     public void testWithOddNumberOfDoubles() {
         // Given
         double[] unsortedVector = {32.2, 42.1, 7.2, 0.3, 15.7};
-        MergeSortRecurrent sorter = new MergeSortRecurrent();
+        MergeSort sorter = new MergeSort();
 
         // When
         double[] sortedVector = sorter.sort(unsortedVector);
@@ -26,7 +26,7 @@ public class MergeSortTest {
     public void testWithEvenNumberOfDoubles() {
         // Given
         double[] unsortedVector = {32.2, 42.1, 7.2, 0.3, 15.7, 70.2};
-        MergeSortRecurrent sorter = new MergeSortRecurrent();
+        MergeSort sorter = new MergeSort();
 
         // When
         double[] sortedVector = sorter.sort(unsortedVector);
@@ -40,7 +40,7 @@ public class MergeSortTest {
     public void testWithNegativeNumbers() {
         // Given
         double[] unsortedVector = {-32, -2, 3, 0, -17, 29};
-        MergeSortRecurrent sorter = new MergeSortRecurrent();
+        MergeSort sorter = new MergeSort();
 
         // When
         double[] sortedVector = sorter.sort(unsortedVector);
@@ -59,7 +59,7 @@ public class MergeSortTest {
         for (int i = 0; i < unsortedVectorLength; i++) {
             unsortedVector[i] = generator.nextDouble();
         }
-        MergeSortRecurrent sorter = new MergeSortRecurrent();
+        MergeSort sorter = new MergeSort();
 
         // When
         double[] sortedVector = sorter.sort(unsortedVector);
@@ -68,33 +68,55 @@ public class MergeSortTest {
         // Then
         assertEquals(sortedVectorLength, unsortedVectorLength);
     }
-    
+
     @Test(expected = NullPointerException.class)
-    public void testIfMethodRaisesAnNullPointerException(){
+    public void testIfMethodRaisesAnNullPointerException() {
         // Given
         double[] unsortedVector = null;
-        MergeSortRecurrent sorter = new MergeSortRecurrent();
-        
+        MergeSort sorter = new MergeSort();
+
         // When
-        double [] sortedVector = sorter.sort(unsortedVector);
-        
+        double[] sortedVector = sorter.sort(unsortedVector);
+
         // Then
         assertNull(sortedVector);
     }
-    
+
     @Test
-    public void testOnEmptyVector(){
+    public void testOnEmptyVector() {
+        // Given
         int vectorLength = 10;
         double[] unsortedVector = new double[vectorLength];
-        MergeSortRecurrent sorter = new MergeSortRecurrent();
-        
+        MergeSort sorter = new MergeSort();
+
         // When
-        double [] sortedVector = sorter.sort(unsortedVector);
-        double [] expectedVector = new double[vectorLength];
+        double[] sortedVector = sorter.sort(unsortedVector);
+        double[] expectedVector = new double[vectorLength];
         int expectedLength = vectorLength;
-        
+
         // Then
         assertEquals(sortedVector.length, expectedLength);
+        assertArrayEquals(sortedVector, expectedVector, 0.0);
+    }
+
+    @Test
+    public void testOnHugeIntegerValueVectorSize() {
+        // Given
+        int vectorLength = 10000000;
+        double[] unsortedVector = new double[vectorLength];
+        MergeSort sorter = new MergeSort();
+        for (int i = 0; i < vectorLength; i++) {
+            unsortedVector[i] = vectorLength - i  - 1;
+        }
+
+        // When
+        double[] sortedVector = sorter.sort(unsortedVector);
+        double[] expectedVector = new double[vectorLength];
+        for (int i = 0; i < vectorLength; i++) {
+            expectedVector[i] = i;
+        }
+        
+        // Then
         assertArrayEquals(sortedVector, expectedVector, 0.0);
     }
 

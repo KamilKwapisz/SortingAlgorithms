@@ -84,6 +84,7 @@ public class QuickSortTest {
     
     @Test
     public void testOnEmptyVector(){
+        // Given
         int vectorLength = 10;
         double[] unsortedVector = new double[vectorLength];
         QuickSort sorter = new QuickSort();
@@ -95,6 +96,27 @@ public class QuickSortTest {
         
         // Then
         assertEquals(sortedVector.length, expectedLength);
+        assertArrayEquals(sortedVector, expectedVector, 0.0);
+    }
+    
+    @Test
+    public void testOnMaxHugeIntegerValueVectorSize() {
+        // Given
+        int vectorLength = 100000;
+        double[] unsortedVector = new double[vectorLength];
+        QuickSort sorter = new QuickSort();
+        for (int i = 0; i < vectorLength; i++) {
+            unsortedVector[i] = vectorLength - i  - 1;
+        }
+
+        // When
+        double[] sortedVector = sorter.sort(unsortedVector);
+        double[] expectedVector = new double[vectorLength];
+        for (int i = 0; i < vectorLength; i++) {
+            expectedVector[i] = i;
+        }
+        
+        // Then
         assertArrayEquals(sortedVector, expectedVector, 0.0);
     }
 
