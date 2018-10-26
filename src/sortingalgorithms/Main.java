@@ -1,5 +1,7 @@
 package sortingalgorithms;
 
+import timemeasures.TimeMeasures;
+
 public class Main {
     
     public static void printVector(double [] vector){
@@ -17,10 +19,12 @@ public class Main {
 //        QuickSort sorter = new QuickSort();
         printVector(sorter.sort(vector));
         
-//        TimeMeasures timer = new TimeMeasures(180, 1000);
-//        System.out.println("Insertion Sort: ");
-//        timer.measureInsortTime();
-//        System.out.println("Merge Sort: ");
-//        timer.measureQuickSortTime();
+        TimeMeasures timer = new TimeMeasures(180, 10000);
+        System.out.println("Insertion Sort: \n");
+        timer.measureInsortTime();
+        System.out.println("Quick Sort: \n");
+        timer.measureQuickSortTime();
+        System.out.println("Merge Sort: \n");
+        timer.measureMergeSortTime();
     }
 }
