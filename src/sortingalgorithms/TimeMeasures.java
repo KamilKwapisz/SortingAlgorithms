@@ -84,7 +84,7 @@ public class TimeMeasures {
     }
 
     private long getAverageMergeSortTime(int elementsNumber) {
-        MergeSort sorter = new MergeSort();
+        MergeSortRecurrent sorter = new MergeSortRecurrent();
         long time = 0;
         for (int i = 0; i < iterationsNumber; i++) {
             double[] vector = createRandomDataVector(elementsNumber);

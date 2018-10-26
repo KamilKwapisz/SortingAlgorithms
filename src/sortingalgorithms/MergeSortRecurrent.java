@@ -1,6 +1,6 @@
 package sortingalgorithms;
 
-public class MergeSort implements SortingAlgorithm {
+public class MergeSortRecurrent implements SortingAlgorithm {
 
     void merge(double vector[], int leftIndex, int middleIndex, int rightIndex) {
         int firstVectorSize = middleIndex - leftIndex + 1;
