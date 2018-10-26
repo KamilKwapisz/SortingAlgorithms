@@ -1,6 +1,9 @@
-package sortingalgorithms;
+package timemeasures;
 
 import java.util.Random;
+import sortingalgorithms.InsertionSort;
+import sortingalgorithms.MergeSort;
+import sortingalgorithms.QuickSort;
 
 public class TimeMeasures {
 
@@ -52,7 +55,7 @@ public class TimeMeasures {
 
     private double[] createRandomDataVector(int elementsNumber) {
         double[] vector = new double[elementsNumber];
-        Random generator = new Random();
+        Random generator = new Random(291084);
         for (int i = 0; i < elementsNumber; i++) {
             vector[i] = generator.nextDouble();
         }

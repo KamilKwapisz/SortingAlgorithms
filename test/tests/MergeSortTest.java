@@ -55,7 +55,7 @@ public class MergeSortTest {
         // Given
         int unsortedVectorLength = 500;
         double[] unsortedVector = new double[unsortedVectorLength];
-        Random generator = new Random();
+        Random generator = new Random(291084);
         for (int i = 0; i < unsortedVectorLength; i++) {
             unsortedVector[i] = generator.nextDouble();
         }
