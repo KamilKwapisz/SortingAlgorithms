@@ -19,11 +19,11 @@ public class Main {
 //        QuickSort sorter = new QuickSort();
         printVector(sorter.sort(vector));
         
-        TimeMeasures timer = new TimeMeasures(180, 10000);
-        System.out.println("Insertion Sort: \n");
-        timer.measureInsortTime();
-        System.out.println("Quick Sort: \n");
-        timer.measureQuickSortTime();
+        TimeMeasures timer = new TimeMeasures(180, 100000);
+//        System.out.println("Insertion Sort: \n");
+//        timer.measureInsortTime();
+//        System.out.println("Quick Sort: \n");
+//        timer.measureQuickSortTime();
         System.out.println("Merge Sort: \n");
         timer.measureMergeSortTime();
     }
