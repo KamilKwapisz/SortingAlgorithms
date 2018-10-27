@@ -1,4 +1,4 @@
-package sortingalgorithms;
+package timemeasures;
 
 import timemeasures.TimeMeasures;
 

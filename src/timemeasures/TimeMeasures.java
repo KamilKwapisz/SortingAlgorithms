@@ -17,12 +17,11 @@ public class TimeMeasures {
 
     public void measureInsortTime() {
         for (int i = 2; i <= maxVectorLength; i++) {
-            long time = getAverageInsortTime(i);
-//            System.out.println(time);
+            getAverageInsortTime(i);
         }
     }
 
-    private long getAverageInsortTime(int elementsNumber) {
+    private void getAverageInsortTime(int elementsNumber) {
         InsertionSort sorter = new InsertionSort();
         long time = 0;
         for (int i = 0; i < iterationsNumber; i++) {
@@ -49,8 +48,6 @@ public class TimeMeasures {
             time += timerStop - timerStart;
         }
         System.out.println(time/iterationsNumber);
-        time /= iterationsNumber;
-        return time;
     }
 
     private double[] createRandomDataVector(int elementsNumber) {
@@ -80,9 +77,7 @@ public class TimeMeasures {
 
     public void measureMergeSortTime() {
         for (int i = 2; i <= maxVectorLength; i++) {
-//            double[] vector = createRandomDataVector(i);
             long time = getAverageMergeSortTime(i);
-//            System.out.println(time);
         }
     }
 
