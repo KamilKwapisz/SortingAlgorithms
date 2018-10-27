@@ -11,21 +11,21 @@ public class QuickSort {
     }
 
     private int partition(double[] vector, int startIndex, int endIndex) {
-        double x = vector[startIndex];
+        double vectorElement = vector[startIndex];
         int i = startIndex + 1;
         int j = endIndex;
         while (i < j) {
-            while (i < j && vector[i] <= x) {
+            while (i < j && vector[i] <= vectorElement) {
                 i++;
             }
-            while (i < j && vector[j] > x) {
+            while (i < j && vector[j] > vectorElement) {
                 j--;
             }
             if (i < j) {
                 swap(vector, i, j);
             }
         }
-        if (vector[i] > x) {
+        if (vector[i] > vectorElement) {
             i--;
         }
         swap(vector, startIndex, i);
