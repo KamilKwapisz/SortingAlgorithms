@@ -100,7 +100,7 @@ public class QuickSortTest {
     }
     
     @Test
-    public void testOnMaxHugeIntegerValueVectorSize() {
+    public void testOnBigVectorSize() {
         // Given
         int vectorLength = 100000;
         double[] unsortedVector = new double[vectorLength];

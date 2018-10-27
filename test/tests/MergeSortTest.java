@@ -100,7 +100,7 @@ public class MergeSortTest {
     }
 
     @Test
-    public void testOnHugeIntegerValueVectorSize() {
+    public void testOnBigVectorSize() {
         // Given
         int vectorLength = 10000000;
         double[] unsortedVector = new double[vectorLength];
