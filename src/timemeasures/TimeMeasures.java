@@ -77,11 +77,11 @@ public class TimeMeasures {
 
     public void measureMergeSortTime() {
         for (int i = 2; i <= maxVectorLength; i++) {
-            long time = getAverageMergeSortTime(i);
+           getAverageMergeSortTime(i);
         }
     }
 
-    private long getAverageMergeSortTime(int elementsNumber) {
+    private void getAverageMergeSortTime(int elementsNumber) {
         MergeSort sorter = new MergeSort();
         long time = 0;
         for (int i = 0; i < iterationsNumber; i++) {
@@ -89,7 +89,7 @@ public class TimeMeasures {
             long timerStart = System.nanoTime();
             sorter.sort(vector);
             long timerStop = System.nanoTime();
-            time += timerStop - timerStart;
+            time = timerStop - timerStart;
         }
         System.out.print(time/iterationsNumber + ", ");
         for (int i = 0; i < iterationsNumber; i++) {
@@ -97,7 +97,7 @@ public class TimeMeasures {
             long timerStart = System.nanoTime();
             sorter.sort(vector);
             long timerStop = System.nanoTime();
-            time += timerStop - timerStart;
+            time = timerStop - timerStart;
         }
         System.out.print(time/iterationsNumber + ", ");
         for (int i = 0; i < iterationsNumber; i++) {
@@ -105,20 +105,18 @@ public class TimeMeasures {
             long timerStart = System.nanoTime();
             sorter.sort(vector);
             long timerStop = System.nanoTime();
-            time += timerStop - timerStart;
+            time = timerStop - timerStart;
         }
         System.out.println(time/iterationsNumber);
-        time /= iterationsNumber;
-        return time;
     }
     
     public void measureQuickSortTime() {
         for (int i = 2; i <= maxVectorLength; i++) {
-            long time = getAverageQuickSortTime(i);
+            getAverageQuickSortTime(i);
         }
     }
 
-    private long getAverageQuickSortTime(int elementsNumber) {
+    private void getAverageQuickSortTime(int elementsNumber) {
         QuickSort sorter = new QuickSort();
         long time = 0;
         for (int i = 0; i < iterationsNumber; i++) {
@@ -126,7 +124,7 @@ public class TimeMeasures {
             long timerStart = System.nanoTime();
             sorter.sort(vector);
             long timerStop = System.nanoTime();
-            time += timerStop - timerStart;
+            time = timerStop - timerStart;
         }
         System.out.print(time/iterationsNumber + ", ");
         for (int i = 0; i < iterationsNumber; i++) {
@@ -134,7 +132,7 @@ public class TimeMeasures {
             long timerStart = System.nanoTime();
             sorter.sort(vector);
             long timerStop = System.nanoTime();
-            time += timerStop - timerStart;
+            time = timerStop - timerStart;
         }
         System.out.print(time/iterationsNumber + ", ");
         for (int i = 0; i < iterationsNumber; i++) {
@@ -142,10 +140,8 @@ public class TimeMeasures {
             long timerStart = System.nanoTime();
             sorter.sort(vector);
             long timerStop = System.nanoTime();
-            time += timerStop - timerStart;
+            time = timerStop - timerStart;
         }
         System.out.println(time/iterationsNumber);
-        time /= iterationsNumber;
-        return time;
     }
 }
