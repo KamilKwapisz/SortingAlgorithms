@@ -2,7 +2,7 @@ package sortingalgorithms;
 
 import java.util.Stack;
 
-public class QuickSort {
+public class QuickSort implements SortingAlgorithm{
 
     private void swap(double[] vector, int firstIndex, int secondIndex) {
         double tmpVectorElement = vector[firstIndex];
