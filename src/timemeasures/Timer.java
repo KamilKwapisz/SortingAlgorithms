@@ -5,9 +5,9 @@ import sortingalgorithms.SortingAlgorithm;
 
 public class Timer<T extends SortingAlgorithm> {
 
-    T sorter;
-    int maxVectorSize;
-    int iterationsNumber;
+    private T sorter;
+    private int maxVectorSize;
+    private int iterationsNumber;
 
     public Timer(int maxVectorLength, int iterationsNumber) {
         this.maxVectorSize = maxVectorLength;
@@ -17,7 +17,7 @@ public class Timer<T extends SortingAlgorithm> {
     public void setSorter(T sorter) {
         this.sorter = sorter;
     }
-    
+
     public void measureSortingTime() {
         for (int vectorSize = 2; vectorSize <= maxVectorSize; vectorSize++) {
             measureOperationsTime(vectorSize);
