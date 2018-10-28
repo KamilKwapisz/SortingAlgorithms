@@ -5,38 +5,22 @@ import sortingalgorithms.MergeSort;
 import sortingalgorithms.QuickSort;
 
 public class Main {
-    
-    public static void printVector(double [] vector){
-        System.out.print("[");
-        for (double element : vector){
-            System.out.print(element + ", ");
-        } 
-        System.out.println("]");
-    }
-    
+
     public static void main(String[] args) {
-//        double [] vector = {32.2, 42.1, 7.2, 0.3, 15.7};
-////        InsertionSort sorter = new InsertionSort();
-        MergeSort mergeSorter = new MergeSort();
-//        QuickSort sorter = new QuickSort();
-//        InsertionSort sorter = new InsertionSort();
-//        printVector(sorter.sort(vector));
         Timer timer = new Timer(500, 10000);
+        MergeSort mergeSorter = new MergeSort();
         timer.setSorter(mergeSorter);
-        System.out.println("Merge Sort: \n");
+        System.out.println("Merge Sort:");
         timer.measureSortingTime();
-        
-//        QuickSort quickSorter = new QuickSort();
-//        timer.setSorter(quickSorter);
-//        System.out.println("Merge Sort: \n");
-//        timer.measureSortingTime();
-////      
-//        TimeMeasures timer = new TimeMeasures(500, 1000);
-//        System.out.println("Insertion Sort: \n");
-//        timer.measureInsortTime();
-//        System.out.println("Quick Sort: \n");
-//        timer.measureQuickSortTime();
-//        System.out.println("Merge Sort: \n");
-//        timer.measureMergeSortTime();
+
+        QuickSort quickSorter = new QuickSort();
+        timer.setSorter(quickSorter);
+        System.out.println("Quick Sort:");
+        timer.measureSortingTime();
+
+        InsertionSort insertionSorter = new InsertionSort();
+        timer.setSorter(insertionSorter);
+        System.out.println("Insertion Sort:");
+        timer.measureSortingTime();
     }
 }
